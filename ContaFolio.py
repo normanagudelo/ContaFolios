@@ -20,11 +20,11 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.setWindowTitle("Contador de folios GIGHA")
         self.pushButton.clicked.connect(self.moreskia)
+        self.pushButton_2.clicked.connect(self.reinicio)
         self.lcdNumber
         self.textBrowser
         
-        
-             
+                     
        
         """self.commandLinkButton.clicked.connect(lambda: webbrowser.open('https://github.com/normanagudelo/ContaFolios'))"""
        
@@ -47,13 +47,11 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
             except:
                 self.textBrowser.append(f"{documento}   --->   esta averiado, encriptado o no es tipo PDF.")
 
+    def reinicio(self):
+        self.lcdNumber.display(0)
+        self.textBrowser.clear()
+        
                 
-            
-        
-        
-        
-    
-            
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
